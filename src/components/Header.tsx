@@ -1,6 +1,7 @@
 "use client";
 
 import { links } from "@/lib/data";
+import clsx from "clsx";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -23,21 +24,17 @@ const Header = () => {
                         >
                             <Link
                                 className={clsx(
-                                    "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300",
-                                    {
-                                        "text-gray-950 dark:text-gray-200":
-                                            activeSection === link.name,
-                                    }
+                                    "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition "
                                 )}
                                 href={link.hash}
-                                onClick={() => {
-                                    setActiveSection(link.name);
-                                    setTimeOfLastClick(Date.now());
-                                }}
+                                // onClick={() => {
+                                //     setActiveSection(link.name);
+                                //     setTimeOfLastClick(Date.now());
+                                // }}
                             >
                                 {link.name}
 
-                                {link.name === activeSection && (
+                                {/* {link.name === activeSection && (
                                     <motion.span
                                         className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
                                         layoutId="activeSection"
@@ -47,7 +44,7 @@ const Header = () => {
                                             damping: 30,
                                         }}
                                     ></motion.span>
-                                )}
+                                )} */}
                             </Link>
                         </motion.li>
                     ))}
