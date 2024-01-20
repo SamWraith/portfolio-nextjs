@@ -1,11 +1,17 @@
 "use client";
 
+import { useActiveSectionContext } from "@/context/active-section-context";
 import { links } from "@/lib/data";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 const Header = () => {
+    const { activeSection, setActiveSection, setTimeOfLastClick } =
+        useActiveSectionContext();
+
     return (
         <header className=" z-[999] relative">
             <motion.div
@@ -24,19 +30,23 @@ const Header = () => {
                         >
                             <Link
                                 className={clsx(
-                                    "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition "
+                                    "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition",
+                                    {
+                                        "text-gray-950 ":
+                                            activeSection === link.name,
+                                    }
                                 )}
                                 href={link.hash}
-                                // onClick={() => {
-                                //     setActiveSection(link.name);
-                                //     setTimeOfLastClick(Date.now());
-                                // }}
+                                onClick={() => {
+                                    setActiveSection(link.name);
+                                    setTimeOfLastClick(Date.now());
+                                }}
                             >
                                 {link.name}
 
-                                {/* {link.name === activeSection && (
+                                {link.name === activeSection && (
                                     <motion.span
-                                        className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
+                                        className="bg-gray-100 rounded-full absolute inset-0 -z-10 "
                                         layoutId="activeSection"
                                         transition={{
                                             type: "spring",
@@ -44,7 +54,7 @@ const Header = () => {
                                             damping: 30,
                                         }}
                                     ></motion.span>
-                                )} */}
+                                )}
                             </Link>
                         </motion.li>
                     ))}

@@ -6,10 +6,25 @@ import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
+import { useSectionInView } from "@/lib/hooks";
 
 const Intro = () => {
+    const { ref } = useSectionInView("Home", 0.5);
+    // const { ref, inView } = useInView({
+    //     threshold: 0.5,
+    // });
+    // const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
+    // useEffect(() => {
+    //     if (inView && Date.now() - timeOfLastClick > 1000) {
+    //         setActiveSection("Home");
+    //     }
+    // }, [inView, setActiveSection, timeOfLastClick]);
     return (
-        <section className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]">
+        <section
+            ref={ref}
+            id="home"
+            className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
+        >
             <div className="flex justify-center items-center">
                 <div className="relative">
                     <motion.div
