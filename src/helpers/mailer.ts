@@ -1,4 +1,3 @@
-import ContactFormEmail from "@/email/contact-form-email";
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import React from "react";
