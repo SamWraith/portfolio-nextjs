@@ -3,7 +3,8 @@
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
-import { sendEmail } from "@/actions/send-email";
+// import { sendEmail } from "@/actions/send-email";
+import axios from "axios";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
 
@@ -43,14 +44,29 @@ const Contact = () => {
             <form
                 className="mt-10 flex flex-col dark:text-black"
                 action={async (formData) => {
-                    const { data, error } = await sendEmail(formData);
+                    const senderEmail = formData.get("senderEmail");
+                    const message = formData.get("message");
+                    const payload = {
+                        email: senderEmail,
+                        message: message,
+                    };
 
-                    if (error) {
-                        toast.error(error);
-                        return;
+                    const response = await axios.post(
+                        "/api/send-email",
+                        payload
+                    );
+                    if (response.data.status === 200) {
+                        toast.success("Email sent successfully!");
+                    } else {
+                        toast.error("Error sending email");
                     }
+                    // if (error) {
+                    //     toast.error(error);
+                    //     console.log(error);
+                    //     return;
+                    // }
 
-                    toast.success("Email sent successfully!");
+                    // toast.success("Email sent successfully!");
                 }}
             >
                 <input
