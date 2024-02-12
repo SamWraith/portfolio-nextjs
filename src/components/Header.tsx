@@ -5,8 +5,6 @@ import { links } from "@/lib/data";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
 
 const Header = () => {
     const { activeSection, setActiveSection, setTimeOfLastClick } =
