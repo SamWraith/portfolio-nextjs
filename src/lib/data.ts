@@ -2,9 +2,9 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "../../public/corpcomment.png";
-import rmtdevImg from "../../public/rmtdev.png";
-import wordanalyticsImg from "../../public/wordanalytics.png";
+import metaVirtual from "../../public/metaVirtual.png";
+import promptopia from "../../public/Promptopia.png";
+import techHaven from "../../public/TechHaven.png";
 
 export const links = [
     {
@@ -62,25 +62,25 @@ export const experiencesData = [
 
 export const projectsData = [
     {
-        title: "CorpComment",
+        title: "Tech Haven",
         description:
-            "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-        tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-        imageUrl: corpcommentImg,
+            "I made this e-commerce site while being inspired by apple design language. I had integrated it with payload CMS. It has features like filtering and sorting",
+        tags: ["React", "Next.js", "Sass", "Payload CMS"],
+        imageUrl: techHaven,
     },
     {
-        title: "rmtDev",
+        title: "MetaVirtual",
         description:
-            "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-        tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-        imageUrl: rmtdevImg,
+            "This website is built for hand tracking using opencv and mediapipe library. It has features like drawing and ppt control.",
+        tags: ["HTML", "CSS", "JavaScript", "Python", "Firebase", "Flask"],
+        imageUrl: metaVirtual,
     },
     {
-        title: "Word Analytics",
+        title: "Promptopia",
         description:
-            "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-        tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-        imageUrl: wordanalyticsImg,
+            "This website is built so that users can create and share prompts for writing. It has features like creating, editing, and deleting prompts. It also has a search feature.",
+        tags: ["React", "Next.js", "MongoDB", "Tailwind"],
+        imageUrl: promptopia,
     },
 ] as const;
 
