@@ -5,7 +5,6 @@ import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import Header from "@/components/Header";
 import ActiveSectionContextProvider from "@/context/active-section-context";
-// import { Toaster } from "react-hot-toast";
 import { Toaster } from "@/components/ui/sonner"
 import Footer from "@/components/footer";
 import ThemeSwitch from "@/components/theme-switch";
