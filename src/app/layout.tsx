@@ -15,7 +15,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
     title: "Samir Nandan Pandey",
     description:
-        "Samir Nandan Pandey a developer and software engineer who just loves tech and coffee.",
+        "Samir Nandan Pandey a developer and software engineer who just loves tech and coffee. Samir is a full-stack developer who loves to build web applications and websites. He is a tech enthusiast who loves to learn new technologies and frameworks. He is a self-taught developer who loves to build things and solve problems. He also have an adept knowloedge of flutter and dart.",
 };
 
 export default function RootLayout({
