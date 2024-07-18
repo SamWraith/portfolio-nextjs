@@ -6,7 +6,8 @@ import { useSectionInView } from "@/lib/hooks";
 // import { sendEmail } from "@/actions/send-email";
 import axios from "axios";
 import SubmitBtn from "./submit-btn";
-import toast from "react-hot-toast";
+import { toast } from "sonner"
+
 
 const Contact = () => {
     const { ref } = useSectionInView("Contact");
@@ -56,7 +57,12 @@ const Contact = () => {
                         payload
                     );
                     if (response.data.status === 200) {
-                        toast.success("Email sent successfully!");
+                        toast.success("Email sent successfully!", {
+                            action: {
+                                label: "OK!",
+                                onClick: () => {}
+                            },
+                        });
                     } else {
                         toast.error("Error sending email");
                     }
