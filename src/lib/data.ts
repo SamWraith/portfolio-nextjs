@@ -2,9 +2,9 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import metaVirtual from "../../public/metaVirtual.png";
-import promptopia from "../../public/Promptopia.png";
-import techHaven from "../../public/TechHaven.png";
+import metaVirtual from "../../public/metaVirtual.webp";
+import promptopia from "../../public/Promptopia.webp";
+import techHaven from "../../public/TechHaven.webp";
 
 export const links = [
     {
