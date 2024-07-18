@@ -47,11 +47,11 @@ const Contact = () => {
                 action={async (formData) => {
                     const senderEmail = formData.get("senderEmail");
                     const message = formData.get("message");
-                    const payload = {
+                    const data = {
                         email: senderEmail,
                         message: message,
                     };
-
+                    const payload = JSON.stringify(data);
                     const response = await axios.post(
                         "/api/send-email",
                         payload
