@@ -16,8 +16,8 @@ export const sendEmail = async ({
             secure: false,
             // ignoreTLS: true,
             auth: {
-                user: process.env.NEXT_PUBLIC_GMAIL_USER,
-                pass: process.env.NEXT_PUBLIC_GMAIL_PASS,
+                user: process.env.GMAIL_USER,
+                pass: process.env.GMAIL_PASS,
             },
         });
         const mailOptions = {
